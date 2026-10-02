@@ -30,7 +30,7 @@ function ProductScene({productId=1}:{productId?:number}){
   const resize=()=>{const w=host.clientWidth,h=host.clientHeight;camera.aspect=w/Math.max(h,1);camera.updateProjectionMatrix();renderer.setSize(w,h)};resize();window.addEventListener("resize",resize);
   return()=>{cancelAnimationFrame(raf);host.removeEventListener("pointermove",onMove);window.removeEventListener("resize",resize);renderer.dispose();host.innerHTML=""};
  },[productId,rot,zoom]);
- return <div className="scene-wrap"><div ref={ref} className="three-scene"/><div className="scene-tools"><button onClick={()=>setZoom(z=>Math.min(1.35,z+.1)}><Plus/></button><button onClick={()=>setZoom(z=>Math.max(.8,z-.1)}><Minus/></button><span>DRAG TO ROTATE · 3D</span></div></div>
+ return <div className="scene-wrap"><div ref={ref} className="three-scene"/><div className="scene-tools"><button onClick={()=>setZoom(z=>Math.min(1.35,z+.1))}><Plus/></button><button onClick={()=>setZoom(z=>Math.max(.8,z-.1)}><Minus/></button><span>DRAG TO ROTATE · 3D</span></div></div>
 }
 
 export default function Home(){
