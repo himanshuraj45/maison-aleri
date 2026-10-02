@@ -17,7 +17,7 @@ function ProductScene({productId=1}:{productId?:number}){
  const ref=useRef<HTMLDivElement>(null); const [rot,setRot]=useState({x:-.12,y:.3}); const [zoom,setZoom]=useState(1);
  useEffect(()=>{if(!ref.current)return; const host=ref.current; host.innerHTML="";
   const scene=new THREE.Scene(); const camera=new THREE.PerspectiveCamera(35,1,.1,100); camera.position.set(0,0,5);
-  const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true}); renderer.setPixelRatio(Math.min(window.devicePixelRatio,2)); renderer.setSize(host.clientWidth,host.clientHeight); host.appendChild(renderer.domElement);
+  const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true}); renderer.setPixelRatio(Math.min(window.devicePixelRatio,2)); renderer.setSize(host.clientWidth,host.clientHeight); renderer.outputColorSpace=THREE.SRGBColorSpace; renderer.toneMapping=THREE.ACESFilmicToneMapping; renderer.toneMappingExposure=1.15; host.appendChild(renderer.domElement);
   const group=new THREE.Group(); scene.add(group);
   const mat=new THREE.MeshPhysicalMaterial({color:productId===2?0xe9e4da:productId===4?0x77746e:0x111111,roughness:.32,metalness:.04});
   const body=new THREE.Mesh(new THREE.BoxGeometry(1.55,2.25,.48,8,12,4),mat); group.add(body);
@@ -30,7 +30,7 @@ function ProductScene({productId=1}:{productId?:number}){
   const resize=()=>{const w=host.clientWidth,h=host.clientHeight;camera.aspect=w/Math.max(h,1);camera.updateProjectionMatrix();renderer.setSize(w,h)};resize();window.addEventListener("resize",resize);
   return()=>{cancelAnimationFrame(raf);host.removeEventListener("pointermove",onMove);window.removeEventListener("resize",resize);renderer.dispose();host.innerHTML=""};
  },[productId,rot,zoom]);
- return <div className="scene-wrap"><div ref={ref} className="three-scene"/><div className="scene-tools"><button onClick={()=>setZoom(z=>Math.min(1.35,z+.1))}><Plus/></button><button onClick={()=>setZoom(z=>Math.max(.8,z-.1)}><Minus/></button><span>DRAG TO ROTATE · 3D</span></div></div>
+ return <div className="scene-wrap"><div ref={ref} className="three-scene"/><div className="scene-tools"><button onClick={()=>setZoom(z=>Math.min(1.35,z+.1))}><Plus/></button><button onClick={()=>setZoom(z=>Math.max(.8,z-.1))}><Minus/></button><span>DRAG TO ROTATE · 3D</span></div></div>
 }
 
 export default function Home(){
