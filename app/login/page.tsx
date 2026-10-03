@@ -18,7 +18,7 @@ export default function LoginPage() {
   const [message, setMessage] = useState("");
   const [busy, setBusy] = useState(false);
 
-  const cleanPhone = phone.replace(/D/g, "");
+  const cleanPhone = phone.replace(/\D/g, "");
   const e164 = cleanPhone ? `+91${cleanPhone}` : "";
 
   useEffect(() => {
