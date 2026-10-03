@@ -7,7 +7,6 @@ export async function POST(request:Request){
   try{
     const {items}=await request.json();
     if(!Array.isArray(items)||!items.length) return NextResponse.json({error:"Your cart is empty."},{status:400});
-    const subtotal=items.reduce((sum:{value:number},item:{id:number;quantity:number})=>sum,{value:0} as any);
     let amount=0;
     for(const item of items){const p=PRODUCTS[Number(item.id)];const q=Math.floor(Number(item.quantity));if(!p||q<1||q>20) return NextResponse.json({error:"Invalid cart item."},{status:400});amount+=p.price*q}
     amount+=amount>=1999?0:99;
