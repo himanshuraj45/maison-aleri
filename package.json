@@ -10,13 +10,13 @@
   },
   "dependencies": {
     "@react-three/fiber": "latest",
+    "@supabase/supabase-js": "^2.117.2",
     "framer-motion": "latest",
     "lucide-react": "latest",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "three": "latest",
-    "@supabase/supabase-js": "latest"
+    "three": "latest"
   },
   "devDependencies": {
     "@types/node": "latest",
