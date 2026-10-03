@@ -35,7 +35,7 @@ export default function Home(){
    <button className="mobile-menu-btn" onClick={()=>setMenu(!menu)}>{menu?<X/>:<Menu/>}</button>
    <a className="brand" href="#">MAISON <b>ALERI</b></a>
    <nav className={menu?"open":""}>{cats.slice(0,6).map(c=><button key={c} onClick={()=>{setCat(c);setMenu(false)}}>{c}</button>)}</nav>
-   <div className="head-icons"><button onClick={()=>document.getElementById("search")?.focus()}><Search/></button><button><UserRound/></button><button onClick={()=>setDrawer(true)} className="bag-icon"><ShoppingBag/><i>{count}</i></button></div>
+   <div className="head-icons"><button onClick={()=>document.getElementById("search")?.focus()}><Search/></button><a href="/login" aria-label="Login or sign up"><UserRound/></a><button onClick={()=>setDrawer(true)} className="bag-icon"><ShoppingBag/><i>{count}</i></button></div>
   </header>
   <div className="search-line"><Search/><input id="search" value={search} onChange={e=>setSearch(e.target.value)} placeholder="Search dresses, tops, co-ords..." /></div>
   <section className="hero-shop">
