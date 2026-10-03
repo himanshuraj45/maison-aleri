@@ -15,3 +15,38 @@
 .success-card{background:#f4f1eb;text-align:center;width:min(470px,100%);padding:58px 42px;box-shadow:0 35px 90px rgba(0,0,0,.35);animation:checkoutUp .45s ease}.success-mark{width:60px;height:60px;border:1px solid #111;border-radius:50%;display:grid;place-items:center;margin:0 auto 25px;font-size:23px}.success-card small{letter-spacing:.22em;font-size:8px;color:#777}.success-card h2{font:400 40px "Playfair Display",Georgia,serif;margin:13px 0}.success-card p{color:#666;font-size:12px;line-height:1.8;margin:0 auto 28px;max-width:320px}.success-card button{width:100%;border:1px solid #111;background:#111;color:#fff;padding:17px;letter-spacing:.14em;font-size:9px;transition:.25s}.success-card button:hover{background:transparent;color:#111}
 @media(max-width:900px){.checkout-head{padding:27px 24px}.checkout-head:after{position:static;display:block;margin-top:15px;font-size:7px}.checkout-layout{grid-template-columns:1fr}.checkout-summary{min-height:auto}.checkout-form{padding:28px 24px}}
 @media(max-width:520px){.checkout-bg{padding:0}.checkout-modal{width:100%;height:100%;max-height:none;border:0}.checkout-head{padding:22px 18px}.checkout-head h2{font-size:30px}.checkout-form{padding:24px 18px}.form-grid{grid-template-columns:1fr}.checkout-summary{padding:28px 18px}.success-bg{padding:18px}.success-card{padding:45px 24px}}
+
+/* Maison Aleri — elevated product quick view */
+.quick-bg{background:rgba(10,10,10,.78);backdrop-filter:blur(18px);padding:32px}
+.quick-modal{width:min(1180px,96vw);min-height:min(760px,90vh);grid-template-columns:minmax(0,1.08fr) minmax(420px,.92fr);box-shadow:0 45px 120px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.45);overflow:hidden}
+.quick-modal>img{min-height:760px;height:100%;object-fit:cover;object-position:center}
+.quick-modal>div:last-child{padding:78px 72px 64px;display:flex;flex-direction:column;justify-content:center;background:#fbfaf7}
+.qclose{right:24px;top:24px;width:42px;height:42px;border:1px solid #ddd;background:rgba(255,255,255,.92);display:grid;place-items:center;transition:.25s}
+.qclose:hover{background:#111;color:#fff;border-color:#111}
+.qclose svg{width:17px}
+.quick-modal small{font-size:9px;letter-spacing:.24em;color:#777}
+.quick-modal h2{font-family:"Playfair Display",Georgia,serif;font-size:46px;line-height:1.02;font-weight:400;letter-spacing:-.035em;margin:18px 0 13px;max-width:480px}
+.quick-modal>div:last-child>b{font-size:17px;font-weight:500;letter-spacing:.02em}
+.quick-modal p{font-size:12px;line-height:1.9;color:#777;max-width:430px;margin:22px 0 30px}
+.size-heading{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ddd;padding-bottom:10px;margin-bottom:12px;max-width:430px}
+.size-heading span{font-size:9px;letter-spacing:.18em;font-weight:600}
+.size-heading b{font-size:9px;font-weight:500;color:#888}
+.sizes{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;max-width:430px;margin:0 0 25px}
+.sizes button{width:auto;height:48px;border:1px solid #ccc;background:#fff;font-size:10px;letter-spacing:.08em;transition:.2s}
+.sizes button:hover{border-color:#111;transform:translateY(-1px)}
+.sizes button.selected{background:#111;color:#fff;border-color:#111;box-shadow:0 8px 18px rgba(0,0,0,.14)}
+.addbag{max-width:430px;padding:19px;font-size:10px;letter-spacing:.18em;transition:.25s}
+.addbag:disabled{background:#d5d1ca;color:#777;cursor:not-allowed}
+.addbag:not(:disabled):hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(0,0,0,.18)}
+@media(max-width:900px){
+ .quick-bg{padding:12px}
+ .quick-modal{width:min(620px,96vw);min-height:0;grid-template-columns:1fr;max-height:94vh;overflow:auto}
+ .quick-modal>img{min-height:430px;height:52vh;max-height:540px;object-position:center 35%}
+ .quick-modal>div:last-child{padding:34px 28px 30px}
+ .quick-modal h2{font-size:36px}
+}
+@media(max-width:520px){
+ .quick-modal>img{height:48vh;min-height:300px}
+ .quick-modal h2{font-size:31px}
+ .quick-modal>div:last-child{padding:28px 20px}
+}
